@@ -3,8 +3,12 @@
 int main(){
     unsigned int a, b, c;
     printf("Enter a number: ");
-    scanf("%d", &a);
+    if(scanf("%d", &a) - 1){
+        printf("Error: Invalid value\n");
+        return -1;
+    }
     c = a;
+
     printf("Enter the correct number to replace previous one(1 or 0): ");
     scanf("%d", &b);
     

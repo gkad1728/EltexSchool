@@ -3,7 +3,10 @@
 int main(){
     unsigned int a, b;
     printf("Enter a number: ");
-    scanf("%d", &a);
+    if(scanf("%d", &a) - 1){
+        printf("Error: Invalid value\n");
+        return -1;
+    }
 
     printf("The first way:  ");
     b = 0;
