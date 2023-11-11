@@ -37,7 +37,7 @@ int main(){
     array[N / 2][N / 2] = N*N;
 
     for (int i = 0; i < N*N; i++)
-        printf("%d %c", array[i / N][i % N], 10 * ((i + 1) % N == 0));
+        printf("%4d %c", array[i / N][i % N], 10 * ((i + 1) % N == 0));
 
     return 0;
 }
