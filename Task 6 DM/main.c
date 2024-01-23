@@ -27,6 +27,7 @@ int main(){
                     str = malloc(sizeof(struct abonent));
                     if(!str){
                         printf("Error DM (malloc)");
+                        free(str);
                         return 1;
                     }
                     counter = 0;
@@ -37,10 +38,15 @@ int main(){
                 break;
 
             case 2:
-                if(counter != 0){
+                if(counter > -1){
                     if(del(str, counter)){
                         counter--;
-                        str = realloc(str, counter * sizeof(struct abonent) + sizeof(struct abonent));
+                        if(counter != 0)
+                            str = realloc(str, counter * sizeof(struct abonent));
+                        else{
+                            free(str);
+                            counter = -1;
+                        }
                         if(!str){
                             printf("Error DM (realloc)");
                             free(str);
@@ -64,7 +70,8 @@ int main(){
 
 
             case 5:
-                free(str);
+                if(counter != -1)
+                    free(str);
                 return 0;
         }
     }

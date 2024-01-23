@@ -12,8 +12,26 @@ void add(char *name, char *s_name, char *tel){
     char *verification_pointer;
     verification_pointer = name;   //Удаление символов перевода строки
     for (int i = 0; i < 30; i++){
-        if(*verification_pointer == '\n')
+        if(*verification_pointer == '\n'){
             *verification_pointer = '\0'; 
+            break;
+        }
+        verification_pointer++;
+    }
+    verification_pointer = s_name;   //Удаление символов перевода строки
+    for (int i = 0; i < 30; i++){
+        if(*verification_pointer == '\n'){
+            *verification_pointer = '\0'; 
+            break;
+        }
+        verification_pointer++;
+    }
+    verification_pointer = tel;   //Удаление символов перевода строки
+    for (int i = 0; i < 30; i++){
+        if(*verification_pointer == '\n'){
+            *verification_pointer = '\0'; 
+            break;
+        }
         verification_pointer++;
     }
 }
@@ -34,7 +52,7 @@ int del(struct abonent *str, int counter){
                 if(number == 1){
                     counter--;
                     printf("\nАбонент %s %s удалён из справочника\n", str[i].second_name, str[i].name);
-                    for(int p = 0; p <= 10; p++){
+                    for(int p = 0; p < 9; p++){
                         str[i].name[p] = str[counter].name[p];
                         str[i].second_name[p] = str[counter].second_name[p];
                         str[i].tel[p] = str[counter].tel[p];
