@@ -10,7 +10,7 @@ CFLAGS := -Wl,-rpath,./plagins -g
 all : $(BIN)
 
 $(BIN) : $(OBJ)
-		$(CC) $(OBJ) -o $(BIN) $(CFLAGS)
+		$(CC) $(OBJ) -o $(BIN) $(CFLAGS) -ldl
 		
 $(OBJ) : $(SRC)
 		$(CC) $(SRC) -c
