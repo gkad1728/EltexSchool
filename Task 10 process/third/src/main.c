@@ -51,7 +51,7 @@ int main(){
                     DV_end();
                     printf("Вы открыли программу %s после ее завершения нажмите на ENTER, чтобы продолжить работу DV\n", l_namelist[number / 2]->d_name);
                     use_file(l_path, l_namelist[number / 2]->d_name);
-                    getch();
+                    //getch();
                     DV_init();
                 }
             }
@@ -66,7 +66,7 @@ int main(){
                     DV_end();
                     printf("Вы открыли программу %s после ее завершения нажмите на ENTER, чтобы продолжить работу DV\n", r_namelist[number / 2]->d_name);
                     use_file(r_path, r_namelist[number / 2]->d_name);
-                    getch();
+                    //getch();
                     DV_init();
                 }
             }  
