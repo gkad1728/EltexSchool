@@ -13,7 +13,7 @@
 #include <stdlib.h> 
 
 #define BUF_SIZE 50
-#define MAIN_PORT 7778
-#define PORT 7751
+#define MAIN_PORT 7780
+#define PORT 7757
 
 #endif 
