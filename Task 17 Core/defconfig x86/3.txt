@@ -1,0 +1,21 @@
+После запуска меню собираю свою конфигурацию на базе стандартной.
+
+Все, что в статье не рассматривается я решил не трогать.
+
+Я хотел сделать ядро минимальным, поэтому отключил следующие пункты
+Namespaces support
+Initial RAM filesystem and RAM disk
+Profiling support
+
+В главной вкладке я убрал пункты
+Virtualization
+Networking support
+
+Следующие изменения были во вкладке Processor type and features
+я отключил
+Enable MPS table
+Support for extended x86 platforms
+
+В пункте power management and acpi options я отключил:
+Suspend to RAM and standby
+

@@ -12,7 +12,7 @@
 #include <netdb.h>
 #include <stdlib.h> 
 
-#define BUF_SIZE 100
+#define BUF_SIZE 47
 #define MAIN_PORT 7780
 #define PORT 7757
 
