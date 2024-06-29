@@ -1,0 +1,24 @@
+1. Я скачал openssh с гитхаба
+
+2.В файле INSTALL посмотрел нужные версии. zlib 1.1.4 or 1.2.1.2 or greater и openssl 1.1.1 or greater
+
+3.Потом скачал с официальных сайтов zlib-1.3.1 и openssl-1.1.1
+
+4. Сделал конфиг, сборку и установку zlib и openssl, после чего openssh
+
+zlib
+ARCH=arm CC=arm-linux-gnueabihf-gcc ./configure
+make
+sudo make install DESTDIR=/tmp/openssh/builds/build_zlib-1.3.1
+
+openssl
+CROSS_COMPILE=arm-linux-gnueabihf- CC="gcc" ./Configure linux-armv4 --prefix=/tmp/openssh/builds/build_openssl-1.1.1
+make
+sudo make install
+
+openssh
+cross=arm-linux-gnueabihf- CC="${cross}gcc" AR="${cross}ar" ./configure --disable-strip --host=arm-linux-gnueabihf --with-libs --with-zlib=/tmp/openssh/builds/build_zlib-1.3.1/usr/local --with-ssl-dir=/tmp/openssh/sources/openssl-1.1.1 --prefix=/tmp/openssh/builds/build_openssh
+make
+sudo make install
+
+
